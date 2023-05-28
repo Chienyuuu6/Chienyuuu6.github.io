@@ -1,0 +1,124 @@
+.top img{
+	margin: 0px;
+	width: 100%;
+	
+}
+
+
+#bar {
+	list-style-type: none;
+	margin-top: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #BB3D00;
+	position: fixed;
+	top: 0;
+	width: 100%;
+
+}
+
+#bar li { 
+	float: left;
+}
+
+
+#bar li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 10px 14px;
+	text-decoration: none;
+}
+
+
+.main {
+	width: 60%;
+	margin-left: 50px;
+	float: left;
+	
+	
+}
+
+ul {
+	list-style-type: none;
+}
+
+.subtitle {
+	background-color: 	#003D79;
+	color: #ECF5FF;
+	text-align: center;
+	
+}
+
+div.gallery {
+	margin: 45px;
+	float: left;
+	width: 320px;
+	height: 420px;
+}
+
+div.gallery:hover {
+	background-color: #C4E1FF;
+}
+
+div.gallery img{
+	margin-top: 10%;
+	width: 100%;
+	height: auto;
+}
+
+div.remarks {
+	padding: 15px;
+	text-align: center;
+}
+
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-left:auto; 
+	margin-right:auto;
+	table-layout: fixed;
+}
+
+th, td {
+	text-align: left;
+	padding: 12px
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 6.超連結設樣式設定 */
+a:link {
+	color: #003060;
+}
+
+a:visited {
+	color: #642100;
+}
+
+a:hover{
+	color: #FFE66F;
+}
+
+a:active{
+	color:#FFC78E;
+}
+
+}
+
