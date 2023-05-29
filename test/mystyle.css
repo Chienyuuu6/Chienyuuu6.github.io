@@ -1,0 +1,29 @@
+body {
+	background-color: #D1E9E9;
+
+}
+
+table, th, td{
+	border: 2px solid black;
+	border-collapse: collapse;
+}
+
+th, td{
+	padding: 10px;
+}
+
+a:link {
+	color: #003060;
+}
+
+a:visited {
+	color: #642100;
+}
+
+a:hover{
+	color: #FFE66F;
+}
+
+a:active{
+	color:#FFC78E;
+}
