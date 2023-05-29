@@ -59,7 +59,7 @@
 				
 						for(let i=0; i<x.length; i++){
 							
-							dollar=x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue+"</td><td>";
+							dollar=x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue;
 							exMoney= money/parseFloat(x[i].getElementsByTagName("EXRATE")[0].childNodes[0].nodeValue);
 							
 							table+="<tr><td>"+
