@@ -52,7 +52,7 @@
 						const xmlDoc = xml.responseXML;
 						const x = xmlDoc.getElementsByTagName("RATE");
 						let table="<tr><th>幣值</th></tr><tr>現金匯率</th></tr><tr><th>轉換金額</th></tr>";
-						var money = parseINT(document.getElementById("TWD").value);
+						var money = parseInt(document.getElementById("TWD").value);
 				
 						if(money<0){
 							alert("Error Input");
