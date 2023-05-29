@@ -55,11 +55,6 @@
 						let table="<tr><th>幣值</th><th>現金匯率</th><th>轉換金額</th></tr>";
 						var money = parseInt(document.getElementById("TWD").value);
 				
-						if(money<0){
-							alert("Error Input");
-							this.reset();
-						}
-				
 						for(let i=0; i<x.length; i++) {
 							table+="<tr><td>"+
 							x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue+"</td><td>"+
@@ -67,8 +62,12 @@
 							money*parseFloat(x[i].getElementsByTagName("EXRATE")[0].childNodes[0].nodeValue)+"</td></tr>";
 				
 						}
-						
-						if(!reset(this)){
+				
+						if(money<0){
+							alert("Error Input");
+							this.reset();
+						}
+						else{
 							document.getElementById("result").innerHTML = table;
 						}
 					
