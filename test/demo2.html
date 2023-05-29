@@ -54,16 +54,18 @@
 						const x = xmlDoc.getElementsByTagName("RATE");
 						let table="<tr><th>幣值</th><th>現金匯率</th><th>轉換金額</th></tr>";
 						var money = parseInt(document.getElementById("TWD").value);
+						var dollar = "";
 						var exMoney = "";
 				
-						for(let i=0; i<x.length; i++) {
+						for(let i=0; i<x.length; i++){
 							
+							dollar=x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue+"</td><td>";
 							exMoney= money/parseFloat(x[i].getElementsByTagName("EXRATE")[0].childNodes[0].nodeValue);
 							
 							table+="<tr><td>"+
-							x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue+"</td><td>"+
+							dollar +"</td><td>"+
 							x[i].getElementsByTagName("EXRATE")[0].childNodes[0].nodeValue+"</td><td>"+
-							exMoney.toFixed(2)+"</td></tr>";
+							exMoney.toFixed(2)+" "+dollar+"</td></tr>";
 				
 						}
 				
