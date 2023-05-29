@@ -59,7 +59,7 @@
 							table+="<tr><td>"+
 							x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue+"</td><td>"+
 							x[i].getElementsByTagName("EXRATE")[0].childNodes[0].nodeValue+"</td><td>"+
-							money*parseFloat(x[i].getElementsByTagName("EXRATE")[0].childNodes[0].nodeValue)+"</td></tr>";
+							money/parseFloat(x[i].getElementsByTagName("EXRATE")[0].childNodes[0].nodeValue)+"</td></tr>";
 				
 						}
 				
