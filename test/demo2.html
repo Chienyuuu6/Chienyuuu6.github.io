@@ -22,6 +22,7 @@
 			<button onclick="reset()">Reset</button>
 		</div>
 		
+		<br>
 		<div>
 			<table id="result"></table>		
 		</div>
@@ -63,11 +64,13 @@
 							table+="<tr><td>"+
 							x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue+"</td><td>"+
 							x[i].getElementsByTagName("EXRATE")[0].childNodes[0].nodeValue+"</td><td>"+
-							money*parseInt(x[i].getElementsByTagName("EXRATE")[0].childNodes[0].nodeValue)+"</td></tr>";
+							money*parseFloat(x[i].getElementsByTagName("EXRATE")[0].childNodes[0].nodeValue)+"</td></tr>";
 				
 						}
-			
-						document.getElementById("result").innerHTML = table;
+						
+						if(!reset(this)){
+							document.getElementById("result").innerHTML = table;
+						}
 					
 			}
 			
