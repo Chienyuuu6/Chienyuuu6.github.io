@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exchange Rate Calculator</title>
+		<!-- two <meta>tag: 作者資訊、摘要 -->
+		<meta name="author" content="陳芊宇 110403501">
+		<meta name="description" content="This is my WP Final project">
+		
+		<!-- <link> mystyle.css 
+		<link rel="stylesheet" href="./mystyle.css"> -->
+		
+	</head>
+	
+	<body>
+		<h1>Exchange Rate Calculator</h1>
+		<a href="https://rate.bot.com.tw/xrt" target="_blank">2023/05/29 台灣銀行營業時間牌告匯率</a>
+		
+		<div>
+			<p>請輸入台幣金額並按下按鈕：</p>
+			<input type="number" id="TWD">
+			<button onclick="loadDoc()" value="">Submit</button>
+			<button onclick="reset()">Reset</button>
+		</div>
+		
+		<div>
+			<table id="result"></table>		
+		</div>
+		
+		
+		<script>
+			function loadDoc(){
+				const xhttp = new XMLHttpRequest();
+        
+				xhttp.onload = function(){
+					myFunction(this);
+				}
+        
+				xhttp.open("GET", "./rate.xml");
+				xhttp.send();
+			}
+			
+			function myFunction(xml){
+				const xmlDoc = xml.responseXML;
+				const x = xmlDoc.getElementsByTagName("RATE");
+				let table="<tr><th>幣值</th></tr><tr>現金匯率</th></tr><tr><th>轉換金額</th></tr>";
+				var money = parseINT(document.getElementById("TWD").value);
+				
+				if(money<0){
+					alert("Error Input");
+					this.reset();
+				}
+				
+				for(let i=0; i<x.length; i++) {
+					table+="<tr><td>"+
+					x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue+"</td></tr>"+
+					x[i].getElementsByTagName("EXRATE")[0].childNodes[0].nodeValue+"</td></tr>"+
+					money*(x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue)+"</td></tr>";
+				
+				}
+			
+				document.getElementById("result").innerHTML = table;
+			}
+			
+			function reset(){
+				if(confirm("Reset?")){
+					document.getElementById("TWD").value = "";
+					document.getElementById("result").innerHTML = "";
+				}
+			}
+		</script>
+		
+	</body>
+</html>
